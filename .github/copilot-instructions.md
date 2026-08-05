@@ -1,0 +1,4 @@
+- Scaffold a Next.js app with TypeScript, Prisma, and SQLite.
+- Include authentication routes and persistent record storage.
+- Provide a dashboard layout with navigation and tool pages.
+- Ensure the app can be run locally after dependency installation and database migration.

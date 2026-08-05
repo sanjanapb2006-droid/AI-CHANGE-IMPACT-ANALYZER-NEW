@@ -1,0 +1,69 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+
+export default function SignupPage() {
+  const [showPassword, setShowPassword] = useState(false);
+
+  return (
+    <main className="min-h-screen flex items-center justify-center bg-slate-100">
+      <div className="bg-white p-8 rounded-xl shadow-lg w-[420px]">
+        <h1 className="text-3xl font-bold text-center mb-2">
+          Create Account
+        </h1>
+
+        <p className="text-center text-gray-500 mb-6">
+          Join AI Change Impact Analyzer
+        </p>
+
+        <form className="space-y-4">
+          <input
+            type="text"
+            placeholder="Full Name"
+            className="w-full border rounded-lg p-3"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            className="w-full border rounded-lg p-3"
+          />
+
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              className="w-full border rounded-lg p-3"
+            />
+
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-3 text-blue-600"
+            >
+              {showPassword ? "Hide" : "Show"}
+            </button>
+          </div>
+
+          <input
+            type={showPassword ? "text" : "password"}
+            placeholder="Confirm Password"
+            className="w-full border rounded-lg p-3"
+          />
+
+          <button className="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700">
+            Create Account
+          </button>
+        </form>
+
+        <p className="text-center mt-5">
+          Already have an account?{" "}
+          <Link href="/login" className="text-blue-600">
+            Sign In
+          </Link>
+        </p>
+      </div>
+    </main>
+  );
+}
